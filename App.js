@@ -1,11 +1,21 @@
+import { React, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import CalculaRefri from './components/CalculaRefri';
 
 export default function App() {
+  const[qtConvidados, setQtConvidados] = useState();
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text style={styles.titulo}>Quantidade de Alimentos para uma Festa</Text>
+      <TextInput 
+            style={styles.input}
+            keyboardType="numeric"
+            value={qtConvidados}
+            onChangeText={(texto)=>setQtConvidados(texto)}
+          />
+          <CalculaRefri qtConvidados={qtConvidados}/>
     </View>
   );
 }
@@ -13,8 +23,23 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#FFF',
+    alignItems: 'center'
+  },
+  titulo:{
+    fontSize: 35,
+    color: '#FFF',
+    backgroundColor:'#9DD5FA',
+    width: '100%',
+    textAlign: 'center',
+    paddingTop: 20,
+    paddingBottom: 20,
+    fontFamily: 'fantasy'
+  },
+  input:{
+    borderColor:'#000',
+    borderWidth:2,
+    fontSize:30,
+    width:'80%'
   },
 });
