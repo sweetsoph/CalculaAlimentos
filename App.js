@@ -8,7 +8,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Quantidade de Alimentos para uma Festa</Text>
+      <Text style={styles.titulo}>Quantidade de Alimentos para uma Festa!</Text>
       <TextInput 
             style={styles.input}
             keyboardType="numeric"
